@@ -1,0 +1,17 @@
+{
+    "#field_convert_data": 
+    {
+        "description" : "models.ooフィールド生成用のテンプレートです",
+        "<NAME>" : "A列に入力されたカラム名を置換します",
+        "<NULL>" : "Nullの有効状態を置換します",
+        "<BLANK>" : "Blankの有効状態を置換します",
+        "<DEFAULT>" : "文字列以外用のデフォルト値です",
+        "<STR_DEFAULT>" : "文字列用のデフォルト値です",
+        "Template1" : "\"int\" : \"<NAME> = models.IntegerField(<NULL><BLANK><DEFAULT>)\"",
+        "Template2" : "\"text\" : \"<NAME> = models.TextField(<NULL><BLANK><MAX_LENGTH><STR_DEFAULT>)\""
+    },
+    "field_convert_data" : 
+    {
+        
+    }
+}

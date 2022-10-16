@@ -1,0 +1,4 @@
+class <MASTER_NAME>(models.Model):
+<FIELDS>
+    class Meta:
+        app_label = 'app'
