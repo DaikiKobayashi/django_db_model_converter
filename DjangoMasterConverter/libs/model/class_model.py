@@ -1,10 +1,7 @@
 from DjangoMasterConverter.libs.constant.const import Const
 from DjangoMasterConverter.libs.model.script_model import ScriptModel
+from DjangoMasterConverter.libs.model.class_field_model import ClassFieldModel
 
-# テーブル内のfieldを管理するモデル
-# ここでConvertToModelFieldのfieldMapをへんかんする予定
-class ClassFieldModel:
-    field=''
 
 # テーブルのクラスを管理するモデル
 class ClassModel:
@@ -12,10 +9,11 @@ class ClassModel:
     table_fields=[]
 
     def __init__(self, table_name: str):
-        self.class_text = ''
+        self.class_text = table_name
     
-    def add_column_field(self):
-        return
+    def add_column_field(self, field_type: str, column_name:str, blank: str, null: str, max_length:str, default: str):
+        field_model = ClassFieldModel(field_type=field_type,name=column_name,blank=blank,null=null,max_length=max_length,default=default)
+        field_model.get_field()
     
     def get_class_text(self):
         return 
