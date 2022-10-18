@@ -1,4 +1,4 @@
-from DjangoMasterConverter.main import ConvertMain
+from django_master_converter.main import ConvertMain
 import argparse
 
 parser = argparse.ArgumentParser()
