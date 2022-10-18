@@ -1,5 +1,8 @@
-from DjangoMasterConverter.libs.constant.const import Const
-from DjangoMasterConverter.libs.converter.str_to_model_field import ConvertToModelField
+from libs.constant.const import Const
+from libs.converter.str_to_model_field import ConvertToModelField
+from libs.model.class_model import ClassModel
+from libs.model.script_model import ScriptModel
+
 from cmath import isnan, nan
 from dataclasses import field
 import math
@@ -34,18 +37,23 @@ class ConvertMain:
         return master_map
 
     def _MakeClass(self):
-        content = Path(Const.CLASS_TEMPLATE_PATH).read_text()
-        py_code_text = 'from django.db import models \n\n'
-        for key, items in self._ReadExcel().items():
-            field_text= ''
-            for item in items:
-                field_text = field_text + '    ' + item + '\n'
-            class_text = content.replace('<MASTER_NAME>', key)
-            class_text = class_text.replace('<FIELDS>', field_text)
-            py_code_text = py_code_text + class_text + '\n\n'
+        script_model = ScriptModel()        
+        # content = Path(Const.CLASS_TEMPLATE_PATH).read_text()
+        # py_code_text = 'from django.db import models \n\n'
+        # for key, items in self._ReadExcel().items():
+        #     field_text= ''
+        #     for item in items:
+        #         field_text = field_text + '    ' + item + '\n'
+        #     class_text = content.replace('<MASTER_NAME>', key)
+        #     class_text = class_text.replace('<FIELDS>', field_text)
+        #     py_code_text = py_code_text + class_text + '\n\n'
         
-        Path(Const.CONVER_EXPORT_PATH).write_text(py_code_text)
+        # Path(Const.CONVER_EXPORT_PATH).write_text(py_code_text)
 
 
     def Main(self):
         self._MakeClass()
+
+if __name__ == '__main__':
+    cm = ConvertMain()
+    cm.Main()

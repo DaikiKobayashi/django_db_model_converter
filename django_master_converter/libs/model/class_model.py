@@ -1,6 +1,6 @@
-from DjangoMasterConverter.libs.constant.const import Const
-from DjangoMasterConverter.libs.model.script_model import ScriptModel
-from DjangoMasterConverter.libs.model.class_field_model import ClassFieldModel
+from libs.model.class_field_model import ClassFieldModel
+
+from libs.constant.const import Const
 
 
 # テーブルのクラスを管理するモデル
