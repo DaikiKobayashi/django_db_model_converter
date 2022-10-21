@@ -12,6 +12,7 @@ class ScriptModel:
         pass
 
     def add_class(self, gen_class: ClassModel):
+        print(type(gen_class))
         self.class_models.append(gen_class)
 
     def write_script(self, write_path: str) -> None:
