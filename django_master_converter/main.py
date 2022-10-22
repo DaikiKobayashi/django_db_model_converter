@@ -17,14 +17,12 @@ class ConvertMain:
         script_model = ScriptModel()
         excel_loader = ExcelLoader(Const.MASTER_FILE_PATH)
         for key, item in excel_loader.get_converted_data().items():
-            print(key)
             class_model = ClassModel(key)
             for field_key, field_item in item.items():
                 class_model.add_column_field(field_item['field_type'], field_key, field_item['blank'], field_item['null'], field_item['length'], field_item['default'])
-                print(field_key)
-                print(field_item)
             script_model.add_class(class_model)
-            print('======================================================================================================')
+
+        script_model.write_script(Const.CONVER_EXPORT_PATH)
 
 if __name__ == '__main__':
     cm = ConvertMain()
