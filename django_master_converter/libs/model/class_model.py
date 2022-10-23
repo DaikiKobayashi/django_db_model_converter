@@ -17,11 +17,11 @@ class ClassModel:
     def get_class_text(self) -> str:
         class_template = Path(Const.CLASS_TEMPLATE_PATH).read_text()
 
-        export_text = class_template.replace('<MASTER_NAME>', self.table_name)
+        export_text = class_template.replace(Const.REPLACE_TAG_TABLE_NAME, self.table_name)
         field_text = ''
         for class_field in self.class_fields:
-            field_text = field_text + '    ' + class_field.get_field() + '\n'
+            field_text += '    ' + class_field.get_field() + '\n'
 
-        export_text = export_text.replace('<FIELDS>', field_text)
+        export_text = export_text.replace(Const.REPLACE_TAG_CLASS_FIELDS, field_text)
         
         return export_text

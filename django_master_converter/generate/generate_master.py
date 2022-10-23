@@ -5,7 +5,7 @@ class PlayerLevelMaster(models.Model):
     exp = models.BigIntegerField(null=True, blank=True, default=0)
     test1 = models.BooleanField(null=True, blank=True)
     test2 = models.TextField(null=True, blank=True, max_length=100)
-    test3 = models.DateTimeField(null=True, blank=True, default='2001/1/20')
+    test3 = models.DateTimeField(null=True, blank=True, default='2001-01-20')
     test4 = models.FloatField(null=True, blank=True, default=0.001)
     test5 = models.PositiveIntegerField(null=True, blank=True, default=1000)
 

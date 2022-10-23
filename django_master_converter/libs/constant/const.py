@@ -5,3 +5,5 @@ class Const:
     CONVER_EXPORT_PATH = f"{__file__}\\..\\..\\..\\generate\\generate_master.py"
 
     IMPORT_TEXT = 'from django.db import models \n\n'
+    REPLACE_TAG_TABLE_NAME = '<TABLE_NAME>'
+    REPLACE_TAG_CLASS_FIELDS = '<CLASS_FIELDS>'
