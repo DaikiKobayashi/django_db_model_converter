@@ -1,1 +1,1 @@
-# Django_Master_Converter
+# django_db_model_converter
